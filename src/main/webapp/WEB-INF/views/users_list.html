@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Car</title>
+
+</head>
+
+<body>
+<h1>Users</h1>
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>surname</th>
+        <th>age</th>
+    </tr>
+
+    <tr th:each="u : ${allUsers}">
+        <td th:utext="${u.name}">brand</td>
+        <td th:utext="${u.surname}">color</td>
+        <td th:utext="${u.age}">year</td>
+    </tr>
+
+</table>
+
+</body>
+
+</html>
