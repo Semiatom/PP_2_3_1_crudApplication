@@ -3,27 +3,34 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Car</title>
-
+    <title>Users</title>
 </head>
-
 <body>
 <h1>Users</h1>
 
 <table>
     <tr>
-        <th>name</th>
-        <th>surname</th>
-        <th>age</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Action</th>
     </tr>
 
-    <tr th:each="u : ${allUsers}">
-        <td th:utext="${u.name}">brand</td>
-        <td th:utext="${u.surname}">color</td>
-        <td th:utext="${u.age}">year</td>
+    <tr  th:each="u : ${allUsers}">
+        <td>
+            <a th:href="@{/{id} (id=${u.getId()})}" th:utext="${u.name}">Name </a>
+        </td>
+        <td th:utext="${u.surname}">Surname</td>
+        <td th:utext="${u.age}">Age</td>
+        <td a th:href="@{/{id}/edit(id = ${u.id})}">Edit</a</td>
+        <td a href = "/delete?id=${user.id}"> Delete</td>
     </tr>
-
+    <br><br>
 </table>
+
+<input type ="button" value ="add"
+onclick ="window.location.href = 'new'"
+/>
 
 </body>
 

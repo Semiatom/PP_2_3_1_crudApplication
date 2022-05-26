@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+<h1> Edit User</h1>
+
+<form th:method="PATCH" th:action="@{/{id}(id=${user.getId()})}" th:object="${user}">
+    <label for="name"> Name</label>
+    <input type="text" id="name" name="name" value="testName"/>
+    <br>
+    <label for="surname"> Surname</label>
+    <input type="text" id="surname" name="surname"/>
+    <br>
+    <label for="age"> Age</label>
+    <input type="number" step="1" min="1" max="100" value="10" id="age" name="age"/>
+    <br><br>
+
+    <input type="submit" value="ok"/>
+</form>
+</body>
+</html>
