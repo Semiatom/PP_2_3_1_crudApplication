@@ -1,8 +1,7 @@
 package web.UserDAO;
 
-import org.springframework.stereotype.Repository;
+import  org.springframework.stereotype.Repository;
 import web.models.User;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
@@ -20,11 +19,24 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void saveUser(User user) {
+    public void addUser(User user) {
         entityManager.persist(user);
     }
-
-    public User showUser(int id) {
+    @Override
+    public User getUserById(int id) {
         return entityManager.find(User.class, id);
     }
+
+    @Override
+    public void editUser(User user) {
+        entityManager.merge(user);
+    }
+
+    @Override
+    public void removeUserById(int id) {
+        entityManager.remove(entityManager.find(User.class, id));
+    }
+
+
+
 }

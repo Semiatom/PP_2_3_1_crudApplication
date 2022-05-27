@@ -53,7 +53,7 @@ public class User {
         this.surname = lastName;
     }
 
-    public long getAge() {
+    public int getAge() {
         return age;
     }
 
