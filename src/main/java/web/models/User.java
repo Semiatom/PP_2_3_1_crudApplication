@@ -1,6 +1,8 @@
 package web.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -11,9 +13,13 @@ public class User {
     @Column(name = "id")
     private int id;
 
+
     @Column(name = "name")
+    @Size(min = 1, max = 50, message = "Invalid length")
     private String name;
 
+
+    @Size(min = 1, max = 50, message = "Invalid length")
     @Column(name = "surname")
     private String surname;
 
